@@ -1,0 +1,50 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ProvisioningDeleteZoidbergCITaxOnline201608252041",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:DeleteAutoScalingGroup",
+        "autoscaling:DeleteLaunchConfiguration",
+        "autoscaling:DeletePolicy",
+        "autoscaling:DeleteTags",
+        "autoscaling:UpdateAutoScalingGroup",
+        "cloudwatch:DeleteAlarms",
+        "ec2:DeleteInternetGateway",
+        "ec2:DeleteNatGateway",
+        "ec2:DeleteNetworkAcl",
+        "ec2:DeleteRoute",
+        "ec2:DeleteRouteTable",
+        "ec2:DeleteSecurityGroup",
+        "ec2:DeleteSubnet",
+        "ec2:DeleteVpc",
+        "ec2:DeleteTags",
+        "ec2:DetachInternetGateway",
+        "ec2:DisassociateRouteTable",
+        "ec2:ReleaseAddress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ecs:DeleteCluster",
+        "ecs:DeleteService",
+        "ecs:DeregisterTaskDefinition",
+        "elasticloadbalancing:DeleteListener",
+        "elasticloadbalancing:DeleteLoadBalancer",
+        "elasticloadbalancing:DeleteTargetGroup",
+        "iam:DeleteInstanceProfile",
+        "iam:DeletePolicy",
+        "iam:DeleteRole",
+        "iam:DetachRolePolicy",
+        "iam:RemoveRoleFromInstanceProfile",
+        "kms:DeleteAlias",
+        "kms:ScheduleKeyDeletion",
+        "logs:DeleteLogGroup",
+        "route53:DeleteHostedZone",
+        "s3:DeleteBucket"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

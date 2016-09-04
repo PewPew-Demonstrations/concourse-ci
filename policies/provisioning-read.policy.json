@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ProvisioningReadZoidbergCITaxOnline201608252041",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:Describe*",
+        "cloudwatch:Describe*",
+        "ec2:Describe*",
+        "ecs:Describe*",
+        "elasticloadbalancing:Describe*",
+        "iam:Get*",
+        "iam:List*",
+        "kms:Describe*",
+        "kms:Get*",
+        "kms:List*",
+        "logs:Describe*",
+        "route53:Get*",
+        "route53:List*",
+        "s3:Get*",
+        "s3:List*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

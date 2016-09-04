@@ -1,0 +1,16 @@
+module "stack" {
+  source = "git@bitbucket.org:ardelio/concourseci.git//terraform"
+  region = "${var.region}"
+  name = "${var.name}"
+  team = "${var.team}"
+  owner = "${var.owner}"
+  environment = "${var.environment}"
+  ecr = "${var.ecr}"
+  ci_version = "${var.ci_version}"
+  github_app_id = "${var.github_app_id}"
+  github_app_secret = "${var.github_app_secret}"
+  hosted_zone_id = "${var.hosted_zone_id}"
+  hosted_zone_name = "${var.hosted_zone_name}"
+  ssl_certificate_arn = "${var.ssl_certificate_arn}"
+  ssh_key_name = "SuncorpDemoConcourseCi"
+}
