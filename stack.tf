@@ -1,5 +1,5 @@
 module "stack" {
-  source = "git@bitbucket.org:ardelio/concourseci.git//terraform"
+  source = "git@github.com:PewPew-Demonstrations/concourseci.git//terraform"
   region = "${var.region}"
   name = "${var.name}"
   team = "${var.team}"
