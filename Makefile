@@ -11,7 +11,7 @@ terraformpre:
 		-backend-config="key=terraform/state/terraform.tfstate" \
 		-backend-config="region=ap-southeast-2" \
 		-backend-config="encrypt=true" \
-		-backend-config="kms_key_id=5db5f6c9-b5ee-4479-8a33-45311162b30c"
+		-backend-config="kms_key_id=bfdfcad1-015a-41c4-b9f8-b68c95d6b06d"
 	terraform get -update=true
 	terraform remote pull
 	@echo "export TF_VAR_github_app_id=\"$$(terraform output github_app_id 2> /dev/null)\"" > environment-variables.sh
