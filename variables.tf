@@ -4,6 +4,9 @@ variable "region" {
 variable "name" {
   type = "string"
 }
+variable "role" {
+  type = "string"
+}
 variable "team" {
   type = "string"
 }
@@ -33,7 +36,7 @@ variable "hosted_zone_id" {
 }
 variable "hosted_zone_name" {
   type = "string"
-  description = "The base domain name to register a record under (must have a trailing '.') e.g. addevcloudservices.com.au."
+  description = "The base domain name to register a record under (must have a trailing '.') e.g. tw.demo.ardel.io."
 }
 variable "ssl_certificate_arn" {
   type = "string"

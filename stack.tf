@@ -1,7 +1,8 @@
 module "stack" {
-  source = "git@github.com:PewPew-Demonstrations/concourseci.git//terraform"
+  source = "git@github.com:PewPew-Demonstrations/concourse-ci-stack.git//terraform"
   region = "${var.region}"
   name = "${var.name}"
+  role = "${var.role}"
   team = "${var.team}"
   owner = "${var.owner}"
   environment = "${var.environment}"
@@ -12,5 +13,5 @@ module "stack" {
   hosted_zone_id = "${var.hosted_zone_id}"
   hosted_zone_name = "${var.hosted_zone_name}"
   ssl_certificate_arn = "${var.ssl_certificate_arn}"
-  ssh_key_name = "SuncorpDemoConcourseCi"
+  ssh_key_name = "tw-cd-concourse-ci"
 }

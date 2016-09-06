@@ -3,17 +3,17 @@ provider "aws" {
 }
 
 resource "aws_iam_user" "ci" {
-  name = "${var.name}-ci"
+  name = "${var.team}-${var.role}-${var.name}"
 }
 
 resource "aws_kms_key" "ci" {
-    description = "KMS Key used by ${var.name}"
+    description = "KMS Key used by ${var.team}-${var.role}-${var.name}"
     deletion_window_in_days = 7
     enable_key_rotation = true
 }
 
 resource "aws_kms_alias" "ci" {
-    name = "alias/${var.name}-concourseci-kms"
+    name = "alias/${var.team}-${var.role}-${var.name}-kms"
     target_key_id = "${aws_kms_key.ci.key_id}"
 }
 
@@ -98,7 +98,7 @@ resource "aws_iam_policy_attachment" "kms_encrypt" {
 }
 
 resource "aws_s3_bucket" "assets_logs" {
-  bucket = "${var.name}-assets-logs"
+  bucket = "${var.team}-${var.role}-${var.name}-assets-logs"
   acl = "log-delivery-write"
 
 	tags {
@@ -112,7 +112,7 @@ resource "aws_s3_bucket" "assets_logs" {
 }
 
 resource "aws_s3_bucket" "assets" {
-  bucket = "${var.name}-assets"
+  bucket = "${var.team}-${var.role}-${var.name}-assets"
   versioning {
     enabled = true
   }
@@ -142,8 +142,8 @@ resource "aws_s3_bucket" "assets" {
         "${aws_iam_user.ci.arn}"
       ]},
       "Resource": [
-        "arn:aws:s3:::${var.name}-assets",
-        "arn:aws:s3:::${var.name}-assets/*"
+        "arn:aws:s3:::${var.team}-${var.role}-${var.name}-assets",
+        "arn:aws:s3:::${var.team}-${var.role}-${var.name}-assets/*"
       ]
     },
     {
@@ -151,7 +151,7 @@ resource "aws_s3_bucket" "assets" {
       "Effect": "Deny",
       "Principal": "*",
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::${var.name}-assets/*",
+      "Resource": "arn:aws:s3:::${var.team}-${var.role}-${var.name}-assets/*",
       "Condition": {
         "StringNotEquals": {
           "s3:x-amz-server-side-encryption": "aws:kms"
@@ -162,7 +162,7 @@ resource "aws_s3_bucket" "assets" {
 }
 EOF
   tags {
-    Name = "${var.name}-ci"
+    Name = "${var.name}"
     Project = "${var.name}"
     Team = "${var.team}"
     Owner = "${var.owner}"

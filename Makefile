@@ -7,7 +7,7 @@ terraformpre:
 	rm -rf .terraform
 	terraform remote config \
 		-backend=s3 \
-		-backend-config="bucket=suncorp-demo-ci" \
+		-backend-config="bucket=tw-cd-concourse-ci" \
 		-backend-config="key=terraform/state/terraform.tfstate" \
 		-backend-config="region=ap-southeast-2" \
 		-backend-config="encrypt=true" \
