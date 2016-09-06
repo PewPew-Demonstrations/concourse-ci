@@ -1,2 +1,3 @@
-# demo_concourseci
+# Concourse CI
+
 Demonstrate ConcourseCI Implementation
