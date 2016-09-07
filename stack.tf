@@ -12,6 +12,7 @@ module "stack" {
   github_app_secret = "${var.github_app_secret}"
   hosted_zone_id = "${var.hosted_zone_id}"
   hosted_zone_name = "${var.hosted_zone_name}"
+  kms_access_roles = "${var.kms_access_roles}"
   ssl_certificate_arn = "${var.ssl_certificate_arn}"
   ssh_key_name = "tw-cd-concourse-ci"
 }
